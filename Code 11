@@ -1,0 +1,24 @@
+//biblioteca 
+
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, "");
+
+    int num[10], media; //Estrutura array
+    
+    printf("Insira os 10 números:\n"); // Pedir ao usuário 10 números inteiros
+    
+    //leitura dos valores
+    scanf("%d %d %d %d %d %d %d %d %d %d", &num[0], &num[1], &num[2], &num[3],
+    &num[4], &num[5], &num[6], &num[7], &num[8], &num[9]); 
+    
+    //Média dos números
+    media = (num[0] + num[1] + num[2] + num[3] + num[4] + num[5] +
+    num[6] + num[7] + num[8] + num[9]) / 10; 
+    
+    printf("A média dos números é: %d\n", media);
+    
+    return 0;
+}

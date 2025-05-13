@@ -1,0 +1,59 @@
+//biblioteca
+
+#include <stdio.h>
+#include <locale.h>
+
+typedef struct {
+    char nome[50];
+    int idade;
+    float nota;
+} Aluno;
+
+int main() {
+    Aluno alunos[3];
+    char busca[50];
+    int encontrado = 0; //0 alunos encontrados de começo. Caso não encontre nenhum, não mudará
+
+    for (int i = 0; i < 3; i++) { //For para o loop das 3 informações dos 3 alunos
+        printf("Digite o nome do aluno %d:\n", i + 1);
+        scanf(" %[^\n]", alunos[i].nome);
+        printf("Digite a idade do aluno %d:\n", i + 1);
+        scanf("%d", &alunos[i].idade);
+        printf("Digite a nota do aluno %d:\n", i + 1);
+        scanf("%f", &alunos[i].nota);
+    }
+
+    printf("Digite o nome do aluno que deseja buscar:\n"); //Busca pelo nome desejado
+    scanf(" %[^\n]", busca);
+
+
+    for (int i = 0; i < 3; i++) {
+        char *nome1 = alunos[i].nome; //Os ponteiros [*nome1] avançam os nomes encontrados
+        char *nome2 = busca;
+        int iguais = 1;
+
+        while (*nome1 != '\0' || *nome2 != '\0') { // \0 verifica se ambos os nomes chegaram ao fim 
+            if (*nome1 != *nome2) {                // || para dizer OU
+                iguais = 0; //0 nomes iguais
+                break;
+            }
+            nome1++;
+            nome2++;
+        }
+
+        if (iguais) { //Caso os nomes sejam encontrados 
+            printf("Aluno encontrado:\n");
+            printf("Nome: %s\n", alunos[i].nome); //Exibir suas informações
+            printf("Idade: %d\n", alunos[i].idade); 
+            printf("Nota: %.2f\n", alunos[i].nota);
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (encontrado == 0) {
+        printf("Aluno não encontrado.\n"); //Caso não encontrar nenhum 
+    }
+
+    return 0;
+}

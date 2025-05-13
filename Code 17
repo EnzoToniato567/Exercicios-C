@@ -1,0 +1,37 @@
+//biblioteca
+
+#include <stdio.h>
+#include <locale.h>
+
+typedef struct {
+    char nome[50];
+    int idade; //Apenas a idade e o nome
+} Pessoa;
+
+int main() {
+    Pessoa pessoa1, pessoa2;
+    
+    //Dados da primeira pessoa
+    printf("Digite o nome da primeira pessoa:\n");
+    scanf(" %[^\n]", pessoa1.nome);
+    printf("Digite a idade da primeira pessoa:\n");
+    scanf("%d", &pessoa1.idade);
+
+    //Dados da seguna pessoa
+    printf("Digite o nome da segunda pessoa:\n");
+    scanf(" %[^\n]", pessoa2.nome);
+    printf("Digite a idade da segunda pessoa:\n");
+    scanf("%d", &pessoa2.idade);
+
+    if (pessoa1.idade > pessoa2.idade) { //Comparação das idades 
+        //%s para ir direto ao nome das pessoas
+        printf("%s é mais velha(o) que %s.\n", pessoa1.nome, pessoa2.nome);
+    } else if (pessoa2.idade > pessoa1.idade) {
+        printf("%s é mais velha(o) que %s.\n", pessoa2.nome, pessoa1.nome); 
+    } else {
+        printf("%s e %s têm a mesma idade.\n", pessoa1.nome, pessoa2.nome);
+        //Último printf caso as pessoas tenham a mesma idade
+    }
+
+    return 0;
+}

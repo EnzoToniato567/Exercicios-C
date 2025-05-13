@@ -1,0 +1,32 @@
+//biblioteca
+
+#include <stdio.h>
+#include <locale.h>
+
+typedef struct {
+    char nome[50];
+    float mediaFinal; //Média fonal e o nome dos alunos
+} Aluno;
+
+int main() {
+    Aluno alunos[5];
+    float somaMedia= 0, mediaFinal; //A soma das médias é 0 de início
+
+    // Cadastro dos 5 alunos
+    for (int i = 0; i < 5; i++) { //For para estrutura de repetição das informaçõe dos 5 alunos
+        printf("Digite o nome do aluno %d:\n", i + 1);
+        scanf(" %[^\n]", alunos[i].nome);
+
+        printf("Digite a média final do aluno %d:\n", i + 1);
+        scanf("%f", &alunos[i].mediaFinal);
+
+        somaMedia += alunos[i].mediaFinal; //+= para igualar e somar ao mesmo tempo cada média
+    }
+
+    //Soma de todas as médias
+    mediaFinal = somaMedia / 5;
+
+    printf("A média geral da turma é: %.2f\n", mediaFinal);
+
+    return 0;
+}

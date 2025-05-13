@@ -1,0 +1,23 @@
+//biblioteca
+
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, ""); 
+
+    int soma = 0, i; //Igualar a 0 para não ocorrer problemas
+
+    // Somar todos os números pares de 1 a 200
+    for (i = 2; i <= 200; i += 2) { //+= incrementa a contagem de 2 em 2
+        if (i % 2 == 0) { //Verificar apenas os que são pares
+        soma += i;
+        }
+    
+    }
+    
+
+    printf("Soma de todos os números pares de 1 a 200: %d\n", soma);
+
+    return 0;
+}

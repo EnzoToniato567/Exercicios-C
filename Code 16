@@ -1,0 +1,37 @@
+//biblioteca
+
+#include <stdio.h>
+#include <locale.h> 
+
+typedef struct {
+    char nome[50]; //Struct para declarar as informações dos produtos
+    float preco;
+    int quantidade;
+} Produto;
+
+int main() {
+    Produto produtos[5];
+    float total; //Soma total da quantia de compras e o preço dos produtos
+
+    for (int i = 0; i < 5; i++) { //For para a contagem dos 5 produtos
+        printf("Digite o nome do produto %d:\n", i + 1);
+        scanf(" %[^\n]", produtos[i].nome);
+
+        printf("Digite o preço do produto %d:\n", i + 1);
+        scanf("%f", &produtos[i].preco);
+
+        printf("Digite a quantidade do produto %d:\n", i + 1);
+        scanf("%d", &produtos[i].quantidade);
+
+        printf("\n");
+    }
+
+    printf("Produtos cadastrados e seus totais:\n");
+    for (int i = 0; i < 5; i++) {
+        total = produtos[i].preco * produtos[i].quantidade; //Preço do produto * quantidade 
+        printf("Produto: %s\n; Preço: %.2f\n; Quantidade: %d\n; Total: %.2f\n", produtos[i].nome,
+        produtos[i].preco, produtos[i].quantidade, total);
+    }
+
+    return 0;
+}

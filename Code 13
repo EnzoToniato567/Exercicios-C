@@ -1,0 +1,24 @@
+//biblioteca
+
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    
+    int num, i, pares = 0; //Igualar a 0 de começo
+
+    //Loop para ler 10 valores
+    for (i = 0; i < 10; i++) {
+        printf("Digite o número %d: ", i + 1);
+        scanf("%d", &num);
+
+        //Verificar se é par
+        if (num % 2 == 0) {
+            pares++; //Contador de números pares ++
+        }
+    }
+
+    printf("Você digitou %d números pares.\n", pares);
+
+    return 0;
+}

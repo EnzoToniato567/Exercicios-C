@@ -1,0 +1,45 @@
+//biblioteca
+
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, ""); 
+    
+    int num1, num2, opcao, soma, sub;
+
+    printf("Digite 2 números:\n"); // Inserir 2 números de uma vez com %d %d
+    scanf("%d %d", &num1, &num2); 
+   
+    do { //Do para estrutura de opções até o usuário escolher sair
+        printf("----Menu de repetições----\n");
+        printf("1 - Somar\n");
+        printf("2 - Subtrair\n");
+        printf("3 - Sair\n");
+        printf("Digite sua opção: ");
+        scanf("%d", &opcao); 
+
+        switch (opcao) { //Switch case para condições de escolha
+            case 1: {
+                soma = num1 + num2; 
+                printf("Você escolheu soma, resultado: %d\n", soma);
+                break; //Break para fechar o case
+            }
+            case 2: {
+                sub = num1 - num2;
+                printf("Você escolheu subtração, resultado: %d\n", sub);
+                break; 
+            }
+            case 3: {
+                printf("Você escolheu sair do menu. Volte sempre!\n"); 
+                break; 
+            }
+            default: { 
+                printf("Opção inválida! Tente novamente.\n");
+            }
+        }
+
+    } while (opcao != 3); //While para voltar ao menu caso a resposta não seja 3
+
+    return 0;
+}

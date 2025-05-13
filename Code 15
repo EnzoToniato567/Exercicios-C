@@ -1,0 +1,32 @@
+//biblioteca
+
+#include <stdio.h>
+#include <locale.h>
+
+typedef struct { //Struct para declarar as informaçÕes já prontas do aluno
+    char nome[50]; 
+    int idade;
+    float nota;
+} Aluno;
+
+int main() {
+    setlocale(LC_ALL, ""); 
+    
+    Aluno aluno;
+
+    printf("Digite o nome do aluno:\n"); //Pedir as 3 informações dele
+    scanf(" %[^\n]", aluno.nome);
+        
+    printf("Digite a idade do aluno:\n");
+    scanf("%d", &aluno.idade);
+
+    printf("Digite a nota do aluno:\n");
+    scanf("%f", &aluno.nota);
+
+    printf("Informações do Aluno:\n"); //Armazenar as informações final
+    printf("Nome: %s\n", aluno.nome);
+    printf("Idade: %d\n", aluno.idade);
+    printf("Nota: %.2f\n", aluno.nota);
+
+    return 0;
+}
